@@ -13,17 +13,17 @@
   <title>SinnerGPT</title>
   <link rel="icon" type="image/png" href="/tennis.png" />
   <meta name="color-scheme" content="dark" />
-  <meta name="description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" >
-  <meta property="og:title" content="SinnerGPT" >
-  <meta property="og:site_name" content="SinnerGPT" >
-  <meta property="og:description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" >
-  <meta property="og:type" content="website" >
-  <meta property="og:url" content="https://sinnergpt.teto-engineer.ing" >
-  <meta property="og:image" content="/tennis.png" >
-  <meta name="twitter:title" content="SinnerGPT" >
-  <meta name="twitter:description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" >
-  <meta name="twitter:card" content="summary" >
-  <meta name="twitter:image" content="/tennis.png" >
+  <meta name="description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" />
+  <meta property="og:title" content="SinnerGPT" />
+  <meta property="og:site_name" content="SinnerGPT" />
+  <meta property="og:description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sinnergpt.teto-engineer.ing" />
+  <meta property="og:image" content="/tennis.png" />
+  <meta name="twitter:title" content="SinnerGPT" />
+  <meta name="twitter:description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/tennis.png" />
 </svelte:head>
 
 <div class="flex h-dvh max-h-svh w-full flex-col bg-sinner-900">
