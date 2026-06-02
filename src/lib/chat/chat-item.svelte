@@ -11,8 +11,8 @@
 <div class="flex flex-row {messageItem.sender == 'system' ? 'justify-start' : 'justify-end'}">
   <div
     class="max-w-[80%] rounded-2xl p-4 {messageItem.sender == 'system'
-      ? 'rounded-bl-none  bg-sky-900'
-      : 'rounded-br-none  bg-sky-800'}
+      ? 'rounded-bl-none  bg-sinner-800'
+      : 'rounded-br-none  bg-sinner-700'}
       "
   >
     {#if messageItem.pending}

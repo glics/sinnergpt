@@ -67,7 +67,7 @@
       <ChatItem messageItem={message}></ChatItem>
     {/each}
     <div
-      class="sticky right-0 bottom-0 left-0 h-8 bg-linear-to-b from-transparent to-slate-950"
+      class="sticky right-0 bottom-0 left-0 h-8 bg-linear-to-b from-transparent to-sinner-950"
     ></div>
   </div>
 
@@ -77,15 +77,15 @@
       bind:value={inputText}
       disabled={inputDisabled}
       type="text"
-      class="h-full w-full rounded-full border border-slate-800 px-8 py-4 text-white transition-colors outline-none {inputDisabled
-        ? 'bg-slate-800'
-        : 'bg-slate-900'}"
+      class="h-full w-full rounded-full border border-sinner-800 px-8 py-4 text-white transition-colors outline-none {inputDisabled
+        ? 'bg-sinner-800'
+        : 'bg-sinner-900'}"
       placeholder="Ask something..."
     />
     {#if inputText.trim() !== ''}
       <button
         type="submit"
-        class="absolute top-0 right-0 bottom-0 my-4 mr-8 cursor-pointer rounded-full px-6 text-white transition-colors hover:bg-slate-800 lg:mr-40"
+        class="absolute top-0 right-0 bottom-0 my-4 mr-8 cursor-pointer rounded-full px-6 text-white transition-colors hover:bg-sinner-800 lg:mr-40"
       >
         <SendBtnIcon />
       </button>

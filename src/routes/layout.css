@@ -1,2 +1,16 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@theme {
+  --color-sinner-50: #fdf5ef;
+  --color-sinner-100: #fae8d6;
+  --color-sinner-200: #f4ccad;
+  --color-sinner-300: #eba97a;
+  --color-sinner-400: #e28c54;
+  --color-sinner-500: #d47434;
+  --color-sinner-600: #b85c2a;
+  --color-sinner-700: #994624;
+  --color-sinner-800: #7c3a21;
+  --color-sinner-900: #542514;
+  --color-sinner-950: #2a120a;
+}
