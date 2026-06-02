@@ -66,14 +66,14 @@
 <div class="flex h-full min-h-0 flex-col {className}">
   <div
     bind:this={scrollList}
-    class="relative h-full min-h-0 grow space-y-2 overflow-y-scroll px-8 pt-8 lg:px-40"
+    class="scroll-fade relative h-full min-h-0 grow space-y-2 overflow-y-scroll px-8 pt-8 lg:px-40"
   >
     {#each messages as message, index (index)}
       <ChatItem messageItem={message}></ChatItem>
     {/each}
-    <div
-      class="sticky right-0 bottom-0 left-0 h-8 bg-linear-to-b from-transparent to-sinner-950"
-    ></div>
+    <div class="h-5 w-full">
+      <!-- 20px padding for the fade-out effect -->
+    </div>
   </div>
 
   <form class="relative px-8 py-4 lg:px-40" onsubmit={sendMessage}>
@@ -94,3 +94,11 @@
     {/if}
   </form>
 </div>
+
+<style>
+  /* 20px fade to transparent */
+  .scroll-fade {
+    mask-image: linear-gradient(to bottom, black calc(100% - 20px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 20px), transparent 100%);
+  }
+</style>
