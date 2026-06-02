@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import ChatListItem from './chat-list-item.svelte';
 </script>
 

@@ -1,7 +1,11 @@
-<script>
-  let { text } = $props();
+<script lang="ts">
+  interface Props {
+    text: string;
+  }
+
+  let { text }: Props = $props();
 </script>
 
-<div class="bg-red truncate rounded-md border p-2 text-ellipsis">
+  <div class="truncate rounded-md border bg-red-500 p-2 text-ellipsis">
   {text}
 </div>

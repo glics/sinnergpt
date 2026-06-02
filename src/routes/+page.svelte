@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   // let mobileShowingMenu = false;
 
   //import ChatList from '$lib/chat-list/chat-list.svelte';
