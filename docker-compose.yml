@@ -5,3 +5,5 @@ services:
       - ./build:/usr/share/nginx/html
     restart: unless-stopped
     # Either expose port 80 or use traefik labels or another reverse proxy
+    #ports:
+    #  - 80:80
