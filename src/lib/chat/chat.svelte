@@ -1,21 +1,7 @@
 <script lang="ts">
   import ChatItem from './chat-item.svelte';
   import SendBtnIcon from './send-btn-icon.svelte';
-  import type { MessageItem } from './utils';
-
-  const pickOneOfThese = [
-    'Tennis',
-    'Tennis',
-    'Tennis',
-    'Tennis',
-    'Racchetta',
-    'Racchetta',
-    'Racchetta',
-    'Pallina',
-    'Pallina',
-    'Ora tennis io',
-    'Sicuramente non il padel'
-  ];
+  import { getRandomResponse, type MessageItem } from './utils';
 
   let messages = $state<MessageItem[]>([
     {
@@ -33,7 +19,7 @@
     const trimmed = inputText.trim();
     if (!trimmed) return;
 
-    const whichText = pickOneOfThese[Math.round(Math.random() * pickOneOfThese.length)];
+    const whichText = getRandomResponse();
 
     let newItem: MessageItem = {
       message: whichText,
