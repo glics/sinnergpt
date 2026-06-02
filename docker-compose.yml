@@ -1,6 +1,7 @@
 services:
   web:
-    build: .
-    # ports:
-    #   - "3000:80"
+    image: nginx:latest
+    volumes:
+      - ./build:/usr/share/nginx/html
     restart: unless-stopped
+    # Either expose port 80 or use traefik labels or another reverse proxy

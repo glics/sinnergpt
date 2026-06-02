@@ -2,15 +2,28 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --color-sinner-50: #fdf5ef;
-  --color-sinner-100: #fae8d6;
-  --color-sinner-200: #f4ccad;
-  --color-sinner-300: #eba97a;
-  --color-sinner-400: #e28c54;
-  --color-sinner-500: #d47434;
-  --color-sinner-600: #b85c2a;
-  --color-sinner-700: #994624;
-  --color-sinner-800: #7c3a21;
-  --color-sinner-900: #542514;
-  --color-sinner-950: #2a120a;
+  /* Sinner */
+  --color-sinner-50: hsl(8.6 100% 95.9%);
+  --color-sinner-100: hsl(8.4 100% 91.6%);
+  --color-sinner-200: hsl(10.9 97.9% 81.2%);
+  --color-sinner-300: hsl(13.6 98.7% 69.4%);
+  --color-sinner-400: hsl(22.5 90.4% 49.2%);
+  --color-sinner-500: hsl(22.3 92.2% 40%);
+  --color-sinner-600: hsl(22 93.9% 32%);
+  --color-sinner-700: hsl(21.5 95.1% 24.1%);
+  --color-sinner-800: hsl(20.2 97.6% 16.7%);
+  --color-sinner-900: hsl(17.3 96.3% 10.6%);
+  --color-sinner-950: hsl(13.3 100% 7.1%);
+  /* Pallina */
+  --color-pallina-50: hsl(90 100% 85.9%);
+  --color-pallina-100: hsl(78.1 100% 50%);
+  --color-pallina-200: hsl(78.2 100% 43.9%);
+  --color-pallina-300: hsl(78.6 100% 38%);
+  --color-pallina-400: hsl(78.5 100% 31.8%);
+  --color-pallina-500: hsl(78.8 100% 26.3%);
+  --color-pallina-600: hsl(79.6 100% 21%);
+  --color-pallina-700: hsl(80 100% 15.9%);
+  --color-pallina-800: hsl(81.1 100% 10.6%);
+  --color-pallina-900: hsl(85.2 100% 6.1%);
+  --color-pallina-950: hsl(90 100% 3.9%);
 }

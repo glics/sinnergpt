@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { tick } from 'svelte';
   import ChatItem from './chat-item.svelte';
   import SendBtnIcon from './send-btn-icon.svelte';
   import { getRandomResponse, type MessageItem } from './utils';
@@ -10,9 +11,10 @@
     }
   ]);
   let inputText = $state('');
-  let inputElem: HTMLInputElement;
-  let inputDisabled = $state(false);
 
+  let waiting = $state(false);
+
+  let { class: className = '' } = $props();
   let scrollList: HTMLDivElement;
 
   function sendMessage() {
@@ -27,38 +29,41 @@
       pending: true
     };
 
-    messages = [
-      ...messages,
+    messages.push(
       {
         message: trimmed,
         sender: 'user'
       },
       newItem
-    ];
+    );
 
     inputText = '';
-    inputDisabled = true;
-    inputElem.placeholder = 'Thinking...';
+    waiting = true;
 
-    // Call outside event loop to scroll after rendering new msg
-    setTimeout(() => {
-      scrollList.scrollTo({
-        top: scrollList.scrollHeight,
-        behavior: 'smooth'
-      });
-    }, 0);
+    // Scroll after Svelte has flushed the new message to the DOM
+    tick().then(() => {
+      scrollToBottom();
+    });
 
-    setTimeout(() => {
+    setTimeout(async () => {
       newItem.pending = false;
-      messages = [...messages.slice(0, messages.length - 1), newItem];
-      inputElem.placeholder = 'Ask something...';
-      inputDisabled = false;
-      inputElem.focus();
+      messages.pop();
+      messages.push(newItem);
+      waiting = false;
+      await tick();
+      scrollToBottom();
     }, 2000);
+  }
+
+  function scrollToBottom() {
+    scrollList.scrollTo({
+      top: scrollList.scrollHeight,
+      behavior: 'smooth'
+    });
   }
 </script>
 
-<div class="flex h-full min-h-0 flex-col">
+<div class="flex h-full min-h-0 flex-col {className}">
   <div
     bind:this={scrollList}
     class="relative h-full min-h-0 grow space-y-2 overflow-y-scroll px-8 pt-8 lg:px-40"
@@ -73,19 +78,16 @@
 
   <form class="relative px-8 py-4 lg:px-40" onsubmit={sendMessage}>
     <input
-      bind:this={inputElem}
       bind:value={inputText}
-      disabled={inputDisabled}
       type="text"
-      class="h-full w-full rounded-full border border-sinner-800 px-8 py-4 text-white transition-colors outline-none {inputDisabled
-        ? 'bg-sinner-800'
-        : 'bg-sinner-900'}"
+      class="h-full w-full rounded-full border border-sinner-800 bg-sinner-900 px-8 py-4 text-white transition-colors outline-none"
       placeholder="Ask something..."
     />
     {#if inputText.trim() !== ''}
       <button
         type="submit"
-        class="absolute top-0 right-0 bottom-0 my-4 mr-8 cursor-pointer rounded-full px-6 text-white transition-colors hover:bg-sinner-800 lg:mr-40"
+        disabled={waiting}
+        class="absolute top-0 right-0 bottom-0 my-4 mr-8 cursor-pointer rounded-full px-6 text-white transition-colors hover:bg-sinner-800 disabled:pointer-events-none disabled:opacity-40 lg:mr-40"
       >
         <SendBtnIcon />
       </button>

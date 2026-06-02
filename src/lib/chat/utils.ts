@@ -19,7 +19,6 @@ const responses: WeightedString[] = [
 ];
 
 export function getRandomResponse(): string {
-
   // Probably not the most efficient
   // i dont care tho
   // ask ai if you want a better version
