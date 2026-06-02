@@ -1,28 +1,26 @@
 <script lang="ts">
   import { PUBLIC_APPVER } from '$env/static/public';
-  // let mobileShowingMenu = false;
-
-  //import ChatList from '$lib/chat-list/chat-list.svelte';
   import Chat from '$lib/chat/chat.svelte';
   import DotGrid from '$lib/dot-grid.svelte';
+  //import ChatList from '$lib/chat-list/chat-list.svelte';
 
-  //version number from .env
+  // let mobileShowingMenu = false;
 </script>
 
 <svelte:head>
   <title>SinnerGPT</title>
   <link rel="icon" type="image/png" href="/tennis.png" />
   <meta name="color-scheme" content="dark" />
-  <meta name="description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" />
   <meta property="og:title" content="SinnerGPT" />
+  <meta name="twitter:title" content="SinnerGPT" />
   <meta property="og:site_name" content="SinnerGPT" />
+  <meta name="description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" />
   <meta property="og:description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" />
+  <meta name="twitter:description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" />
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <meta property="og:url" content="https://sinnergpt.teto-engineer.ing" />
   <meta property="og:image" content="/tennis.png" />
-  <meta name="twitter:title" content="SinnerGPT" />
-  <meta name="twitter:description" content="Cazzo, palle e racchetta in mano. Ora tennis io. ✨" />
-  <meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/tennis.png" />
 </svelte:head>
 
